@@ -16,6 +16,9 @@ while i < 9:
             if game[next_position - 1] != "o":
                 game[next_position - 1] = "x"   
                 showGame()
+            else:
+                print("Error")     
+                break
         else:
             print("Error")     
             break
@@ -25,6 +28,9 @@ while i < 9:
             if game[next_position - 1] != "o":
                 game[next_position - 1] = "o"   
                 showGame()
+            else:
+                print("Error")     
+                break
         else:
             print("Error")     
             break
