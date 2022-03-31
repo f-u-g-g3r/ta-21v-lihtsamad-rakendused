@@ -8,14 +8,23 @@ map = [
 
 start_pos_x = 0
 start_pos_y = 0
-def get_next_free_position():
-    if map[start_pos_x][start_pos_y + 1] == 1:
+
+y_rows = 5
+x_columns = 5
+
+def get_next_free_position(current_position_y, current_position_x):
+    if current_position_x + 1 < x_columns and map[current_position_y][current_position_x + 1] == 1:
         print("can go right")
-        return [start_pos_y, start_pos_x + 1]
+        return [current_position_y, current_position_x + 1]
 
-    if map[start_pos_x + 1][start_pos_y] == 1:
+    if current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == 1:
         print("can go bottom")
-        return [start_pos_y + 1, start_pos_x]
+        return [current_position_y + 1, current_position_x]
 
-next_free_position = get_next_free_position()
+next_free_position = get_next_free_position(start_pos_x, start_pos_y)
 print("Next free position is: ", next_free_position)
+while next_free_position:
+    next_free_position = get_next_free_position(next_free_position[0], next_free_position[1])
+    print("Next free position is: ", next_free_position)
+
+
