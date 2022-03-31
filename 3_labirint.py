@@ -5,4 +5,6 @@ map = [
     [1, 1, 1, 0, 0],
     [0, 0, 1, 1, 24]
 ]
-print(map)
+
+start_pos_x = 0
+start_pos_y = 0
