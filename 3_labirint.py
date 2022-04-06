@@ -22,15 +22,9 @@ def get_next_free_position(current_position_y, current_position_x):
     can_go_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == 1
     can_go_top = current_position_y - 1 >= 0 and map[current_position_y - 1][current_position_x] == 1 or 24
     
-    if can_go_left and can_go_bottom:
-        if random_number < 0.5 :
-            print("can go left")
-            return [current_position_y, current_position_x - 1]
-        elif random_number > 0.5:
-            print("can go bottom")
-            return [current_position_y + 1, current_position_x]
 
-    if can_go_bottom and can_go_right and can_go_top:
+
+    if  can_go_top and can_go_bottom and can_go_right:
         if random_number < 0.25 :
             print("can go bottom")
             return [current_position_y + 1, current_position_x]
@@ -49,8 +43,16 @@ def get_next_free_position(current_position_y, current_position_x):
             print("can go right")
             return [current_position_y, current_position_x + 1]
     
-    if can_go_right and can_go_top:
+    if can_go_left and can_go_bottom:
         if random_number < 0.5 :
+            print("can go left")
+            return [current_position_y, current_position_x - 1]
+        elif random_number > 0.5:
+            print("can go bottom")
+            return [current_position_y + 1, current_position_x]
+            
+    if can_go_right and can_go_top:
+        if random_number < 0.5:
             print("can go right")
             return [current_position_y, current_position_x + 1]
         elif random_number > 0.5:
