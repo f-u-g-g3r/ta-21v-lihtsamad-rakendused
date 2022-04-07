@@ -1,7 +1,6 @@
 import random
 
 random_number = random.random()
-
 if random_number < 0.25 :
     print("try to go right")
 elif random_number > 0.25 and random_number < 0.5:
