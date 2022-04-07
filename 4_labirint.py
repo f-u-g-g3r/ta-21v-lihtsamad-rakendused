@@ -6,10 +6,10 @@ WALL = 0
 
 map = [
     [START, ROAD, ROAD, ROAD, ROAD],
-    [WALL, WALL, WALL, WALL, ROAD],
-    [WALL, WALL, WALL, WALL, ROAD],
-    [WALL, WALL, WALL, WALL, ROAD],
-    [WALL, WALL, WALL, WALL, FINISH],
+    [ROAD, WALL, WALL, WALL, ROAD],
+    [ROAD, ROAD, FINISH, WALL, ROAD],
+    [WALL, WALL, ROAD NC, WALL, ROAD],
+    [WALL, WALL, ROAD, ROAD, ROAD],
 ]
 
 start_pos_x = 0
@@ -26,14 +26,30 @@ def get_next_free_position(current_position_y, current_position_x):
     can_go_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == ROAD
     can_go_top = current_position_y - 1 > 0 and map[current_position_y - 1][current_position_x] == ROAD
 
-    finish_go_right = current_position_x + 1 < x_columns and map[current_position_y][current_position_x + 1] == FINISH
-    finish_go_left = current_position_x - 1 > 0 and map[current_position_y][current_position_x - 1] == FINISH
-    finish_go_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == FINISH
-    finish_go_top = current_position_y - 1 > 0 and map[current_position_y - 1][current_position_x] == FINISH
+    finish_on_right = current_position_x + 1 < x_columns and map[current_position_y][current_position_x + 1] == FINISH
+    finish_on_left = current_position_x - 1 > 0 and map[current_position_y][current_position_x - 1] == FINISH
+    finish_on_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == FINISH
+    finish_on_top = current_position_y - 1 > 0 and map[current_position_y - 1][current_position_x] == FINISH
 
 
     available_next_positions = []
 
+    if finish_on_right:
+        print("Finish on right")
+        return False
+
+    if finish_on_left:
+        print("Finish on left")
+        return False
+
+    if finish_on_bottom:
+    
+        print("Finish on bottom")
+        return False
+
+    if finish_on_top:
+        print("Finish on top")
+        return False
 
     if can_go_left:
         print("can go left")
