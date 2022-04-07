@@ -25,6 +25,7 @@ def get_next_free_position(current_position_y, current_position_x):
     can_go_left = current_position_x - 1 > 0 and map[current_position_y][current_position_x - 1] == ROAD
     can_go_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == ROAD
     can_go_top = current_position_y - 1 > 0 and map[current_position_y - 1][current_position_x] == ROAD
+    can_finish = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == FINISH
 
     if can_go_left and can_go_right:
         if random_number < 0.5:
@@ -33,7 +34,24 @@ def get_next_free_position(current_position_y, current_position_x):
         else:
             print("can go right")
             return [current_position_y, current_position_x + 1]
-            
+
+    if can_go_left and can_go_bottom:
+        if random_number < 0.5:
+            print("can go left")
+            return [current_position_y, current_position_x - 1]
+        else:
+            print("can go bottom")
+            return [current_position_y + 1, current_position_x]
+
+    if can_go_top and can_finish:
+        if random_number < 0.5:
+            print("can go top")
+            return [current_position_y - 1, current_position_x]
+        else:
+            print("can finish")
+            return [current_position_y + 1, current_position_x]
+
+
     if can_go_left:
         print("can go left")
         return [current_position_y, current_position_x - 1]
@@ -57,3 +75,4 @@ print("Next free position is: ", next_free_position)
 while next_free_position:
     next_free_position = get_next_free_position(next_free_position[0], next_free_position[1])
     print("Next free position is: ", next_free_position)
+    if 
