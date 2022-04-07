@@ -1,6 +1,6 @@
 import random
-START = 1
-FINISH = 0
+START = 12
+FINISH = 24
 ROAD = 1
 WALL = 0
 
@@ -26,6 +26,14 @@ def get_next_free_position(current_position_y, current_position_x):
     can_go_bottom = current_position_y + 1 < y_rows and map[current_position_y + 1][current_position_x] == ROAD
     can_go_top = current_position_y - 1 > 0 and map[current_position_y - 1][current_position_x] == ROAD
 
+    if can_go_left and can_go_right:
+        if random_number < 0.5:
+            print("can go left")
+            return [current_position_y, current_position_x - 1]
+        else:
+            print("can go right")
+            return [current_position_y, current_position_x + 1]
+            
     if can_go_left:
         print("can go left")
         return [current_position_y, current_position_x - 1]
