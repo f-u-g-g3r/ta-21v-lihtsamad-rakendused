@@ -7,7 +7,6 @@ map = [
     [1, 1, 1, 1, 1]
 ]
 
-
 start_pos_x = 0
 start_pos_y = 0
 
