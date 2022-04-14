@@ -33,6 +33,9 @@ with mp_hands.Hands(
         print(hand_landmarks.landmark[8])
         x = hand_landmarks.landmark[8].x * image_width
         y = hand_landmarks.landmark[8].y * image_height
+        radius = 10
+        color = (255, 0, 0)
+        thickness = 2
         mp_drawing.draw_landmarks(
             image,
             hand_landmarks,
