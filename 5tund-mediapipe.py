@@ -23,19 +23,19 @@ with mp_hands.Hands(
     image.flags.writeable = False
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = hands.process(image)
-    image_height, image_width = image.shape
     # Draw the hand annotations on the image.
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    image_height, image_width, _ = image.shape
     if results.multi_hand_landmarks:
       for hand_landmarks in results.multi_hand_landmarks:
-        cv2.circle(image, hand_landmarks[8], 20 , (255, 0, 0), 2)
         print(hand_landmarks.landmark[8])
         x = hand_landmarks.landmark[8].x * image_width
         y = hand_landmarks.landmark[8].y * image_height
         radius = 10
         color = (255, 0, 0)
         thickness = 2
+        #cv2.circle(image, hand_landmarks[8], 20 , (255, 0, 0), 2)
         mp_drawing.draw_landmarks(
             image,
             hand_landmarks,
