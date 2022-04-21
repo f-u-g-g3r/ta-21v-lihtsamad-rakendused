@@ -26,16 +26,12 @@ with mp_hands.Hands(
     # Draw the hand annotations on the image.
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-    left_hand_y = 0
-    right_hand_y = 0
-    left_hand_x = 0
-    right_hand_x = 0
+    left_hand_y = 1
+    right_hand_y = 1
+    left_hand_x = 1
+    right_hand_x = 1
     if results.multi_hand_landmarks:
       for hand_landmarks in results.multi_hand_landmarks:
-        print(hand_landmarks.landmark[8])
-        
-        image_height, image_width, _ = image.shape
-        
         x = int(hand_landmarks.landmark[8].x * 640)
         y = int(hand_landmarks.landmark[8].y * 480)
         if x < 480 / 2:
@@ -44,15 +40,15 @@ with mp_hands.Hands(
         else:
           right_hand_y = y
           right_hand_x = x
-        center_coordinates = (x, y)
+
         radius = 40
         color = (255, 0, 0)
         thickness = 5
       cv2.circle(image, (left_hand_x, left_hand_y), radius , color, thickness)
-      cv2.rectangle(image, (20, left_hand_y), (20, y + 50), color, thickness)
+      cv2.rectangle(image, (20, left_hand_y), (20, left_hand_y + 50), color, thickness)
 
-      cv2.circle(image, center_coordinates, radius , color, thickness)
-      cv2.rectangle(image, (20, y), (20, y + 50), color, thickness)
+      cv2.circle(image, (right_hand_x, right_hand_y), radius , color, thickness)
+      cv2.rectangle(image, (460, right_hand_y), (460, right_hand_y + 50), color, thickness)
         
     # Flip the image horizontally for a selfie-view display.
     
