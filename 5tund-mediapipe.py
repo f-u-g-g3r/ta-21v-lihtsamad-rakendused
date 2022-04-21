@@ -40,6 +40,10 @@ with mp_hands.Hands(
         color = (255, 0, 0)
         thickness = 2
         cv2.circle(image, center_coordinates, radius , color, thickness)
+
+        rectCoordinates1 = (320, 480)
+        rectCoordinates2 = (320, 480)
+        cv2.rectangle(image, rectCoordinates1, rectCoordinates2, color, thickness)
         
         mp_drawing.draw_landmarks(
             image,
