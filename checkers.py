@@ -13,6 +13,6 @@ posZeroZero = (0, 0)
 while True:
     cv2.imshow('Checkers', img)
     cv2.rectangle(img, (0, 0), (52, 52), colorLightBrown, thickness)
-    cv2.rectangle(img, (0, 0), (52, 52), colorLightBrown, thickness)
+    cv2.rectangle(img, (52, 0), (104, 52), colorLightBrown, thickness)
     if cv2.waitKey(1) == ord('q'):
         break
