@@ -21,7 +21,8 @@ for i in range(0, 9999999999):
         checker_char_position = input("(White player) Choose checker char position: ")
         
         if checker_num_position == "3" and checker_char_position == "a":
-            if field1[5][0] == "2"
+            if field1[5][0] == "2":
+                print("1")
         
     else:
         next_position = int(input("Position for black player: "))
