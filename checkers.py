@@ -100,10 +100,16 @@ while True:
             checker_char_position = input("(White player) Choose checker char position: ")
 
             if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " W ":
-                checkerIndex = [checkFirstIndex(checker_num_position)] & [checkSecondIndex(checker_char_position)]
+                checkerIndex = [checkFirstIndex(checker_num_position)] + [checkSecondIndex(checker_char_position)]
                 print(checkerIndex)
-                next_num_position = input("(White player) Choose next checker num position: ")
-                next_char_position = input("(White player) Choose next checker char position: ")
+                checker_num_position = input("(White player) Choose next checker num position: ")
+                checker_char_position = input("(White player) Choose next checker char position: ")
+                if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " + ":
+                    newCheckerIndex = [checkFirstIndex(checker_num_position)] + [checkSecondIndex(checker_char_position)]
+                    newCheckerIndex[0] += 1 
+                    newCheckerIndex[1] -= 1
+                    if newCheckerIndex == checkerIndex:
+                        print("URA")
                 #if next_num_position[checkFirstIndex(nex)]
             else:
                 print("You typed wrong!")
