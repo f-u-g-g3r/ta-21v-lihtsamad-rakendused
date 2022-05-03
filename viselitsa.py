@@ -7,7 +7,7 @@ wordToGuess = random.choice(words)
 letters = ["_"] * len(wordToGuess)
 print(letters)
 
-lives = 5
+lives = 6
 
 def drawGameField():
     if(lives == 4):
@@ -23,5 +23,40 @@ def drawGameField():
         print("|       O    ")
         print("|            ")
         print("|            ")
+        print("|            ")
+    elif(lives == ):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
+        print("|       |    ")
+        print("|            ")
+        print("|            ")
+    elif(lives == ):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
+        print("|       |\   ")
+        print("|            ")
+        print("|            ")
+    elif(lives == ):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
+        print("|      /|\   ")
+        print("|            ")
+        print("|            ")
+    elif(lives == ):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
+        print("|      /|\   ")
+        print("|      /     ")
+        print("|            ")
+     elif(lives == ):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
+        print("|      /|\   ")
+        print("|      / \    ")
         print("|            ")
 
