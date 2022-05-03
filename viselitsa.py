@@ -68,3 +68,11 @@ def drawGameField():
         print("|            ")
         print("|      0     ") #grave
         print("|     /X\    ")
+
+def find_index(attempt):
+    if attempt in wordToGuess:
+        for i in range(0, len(wordToGuess))
+while("_" in letters):
+    drawGameField()
+    attempt = input("Enter a letter")
+    
