@@ -73,7 +73,7 @@ def drawGameField():
 while("_" in letters):
     print(letters)
     drawGameField()
-    try_index = input("Enter an index for a letter: ")
+    try_index = int(input("Enter an index for a letter: "))
     if try_index > word_length:
         print("Out of range")
     try_letter = input("Enter a letter: ")
