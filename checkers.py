@@ -1,6 +1,7 @@
 
 
 
+from distutils.command.build_scripts import first_line_re
 from tabnanny import check
 
 
@@ -27,80 +28,84 @@ def showField():
     print(field1[7][0] + field1[7][1] + field1[7][2] + field1[7][3] + field1[7][4] + field1[7][5] + field1[7][6] + field1[7][7] + field1[7][8])
     print(field1[8][0] + field1[8][1] + field1[8][2] + field1[8][3] + field1[8][4] + field1[8][5] + field1[8][6] + field1[8][7])
 
-def chooseIndex():
-    if checker_num_position == "1":
-        firstIndex = [7]
-        return firstIndex
-    elif checker_num_position == "2":
-        firstIndex = [6]
-        return firstIndex
-    elif checker_num_position == "3":
-        firstIndex = [5]
-        return firstIndex
-    elif checker_num_position == "4":
-        firstIndex = [4]
-        return firstIndex
-    elif checker_num_position == "5":
-        firstIndex = [3]
-        return firstIndex
-    elif checker_num_position == "6":
-        firstIndex = [2]
-        return firstIndex
-    elif checker_num_position == "7":
-        firstIndex = [1]
-        return firstIndex
-    elif checker_num_position == "8":
-        firstIndex = [0]
-        return firstIndex
-    else:
-        print("Wrong checker_num_position")
-    
-    
-    if checker_char_position == "a":
-        secondIndex = [0]
-        return secondIndex
-    elif checker_char_position == "b":
-        secondIndex = [1]
-        return secondIndex
-    elif checker_char_position == "c":
-        secondIndex = [2]
-        return secondIndex
-    elif checker_char_position == "d":
-        secondIndex = [3]
-        return secondIndex
-    elif checker_char_position == "e":
-        secondIndex = [4]
-        return secondIndex
-    elif checker_char_position == "f":
-        secondIndex = [5]
-        return secondIndex
-    elif checker_char_position == "g":
-        secondIndex = [6]
-        return secondIndex
-    elif checker_char_position == "h":
-        secondIndex = [7]
-        return secondIndex
-    else:
-        print("Wrong checker_char_position")
+#def chooseIndex(checker_num_position, checker_char_position):
 
-def nextPositionWhite():
-    checker_num_position = input("(White player) Choose checker num position: ")
-    checker_char_position = input("(White player) Choose checker char position: ")
 
-    if checker_num_position == "3" and checker_char_position == "a":
-        if field1[5][0] == "W":
-            next_num_position = input("(White player) Choose next checker num position: ")
-            next_char_position = input("(White player) Choose next checker char position: ")
+#def nextPositionWhite():
+    
+def checkFirstIndex(checker_num_position):
+    while True:
+        if checker_num_position == "1":
+            firstIndex = 7
+            return firstIndex
+        elif checker_num_position == "2":
+            firstIndex = 6
+            return firstIndex
+        elif checker_num_position == "3":
+            firstIndex = 5
+            return firstIndex
+        elif checker_num_position == "4":
+            firstIndex = 4
+            return firstIndex
+        elif checker_num_position == "5":
+            firstIndex = 3
+            return firstIndex
+        elif checker_num_position == "6":
+            firstIndex = 2
+            return firstIndex
+        elif checker_num_position == "7":
+            firstIndex = 1
+            return firstIndex
+        elif checker_num_position == "8":
+            firstIndex = 0
+            return firstIndex
         else:
-            print("You typed wrong!")
+            print("Wrong checker_num_position")
+            break
 
-# 0 - cant go / 1 - can go / 2 - white player / 3 - black player
+def checkSecondIndex(checker_char_position):
+    while True:
+        if checker_char_position == "a":
+            secondIndex = 0
+            return secondIndex
+        elif checker_char_position == "b":
+            secondIndex = 1
+            return secondIndex
+        elif checker_char_position == "c":
+            secondIndex = 2
+            return secondIndex
+        elif checker_char_position == "d":
+            secondIndex = 3
+            return secondIndex
+        elif checker_char_position == "e":
+            secondIndex = 4
+            return secondIndex
+        elif checker_char_position == "f":
+            secondIndex = 5
+            return secondIndex
+        elif checker_char_position == "g":
+            secondIndex = 6
+            return secondIndex
+        elif checker_char_position == "h":
+            secondIndex = 7
+            return secondIndex
+        else:
+            print("Wrong checker_char_position")
+            break
 
-for i in range(0, 9999999999):
-    if i % 2 == 0:
-        chooseIndex()
+while True:
+    for i in range(0, 999999999):
+        if i % 2 == 0:
+            checker_num_position = input("(White player) Choose checker num position: ")
+            checker_char_position = input("(White player) Choose checker char position: ")
 
-        
-    else:
-        next_position = int(input("Position for black player: "))
+            if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " W ":
+                next_num_position = input("(White player) Choose next checker num position: ")
+                next_char_position = input("(White player) Choose next checker char position: ")
+            else:
+                print("You typed wrong!")
+                break
+            
+        else:
+            next_position = int(input("Position for black player: "))
 
