@@ -74,9 +74,15 @@ def find_index(attempt):
 while("_" in letters):
     drawGameField()
     attempt = input("Enter a letter: ")
-    if attempt in wordToGuess:
-        if len(attempt) == 1:
-            letters[find_index(attempt)] = attempt
-            print(letters)
+    if attempt in wordToGuess and len(attempt) == 1:
+        letters[find_index(attempt)] = attempt
+        print(letters)
+    else:
+        lives -= 1
+        print("Wrong")
+        print(letters)
+    if lives == 0:
+        print("You lost, game over")
+
     
 
