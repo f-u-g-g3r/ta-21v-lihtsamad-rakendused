@@ -21,7 +21,7 @@ def drawGameField():
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
-        print("|")
-        print("|")
-        print("|")
+        print("|            ")
+        print("|            ")
+        print("|            ")
 
