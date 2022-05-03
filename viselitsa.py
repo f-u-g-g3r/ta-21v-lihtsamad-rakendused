@@ -4,7 +4,7 @@ words = ["cat", "mathematic", "games", "computer", "elephant", "estonia"]
 
 wordToGuess = random.choice(words)
 
-letters = ["_"] * len(wordToGuess)
+numLetters = len(words)
 print(letters)
 
 lives = 8
@@ -52,14 +52,14 @@ def drawGameField():
         print("|      /|\   ")
         print("|      /     ")
         print("|            ")
-     elif(lives == 1):
+    elif(lives == 1):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
         print("|      /|\   ")
         print("|      / \   ")
         print("|            ")
-     elif(lives == 0):
+    elif(lives == 0):
         print("Г------------")
         print("|            ")
         print("|  YOU DIED  ")
@@ -67,5 +67,5 @@ def drawGameField():
         print("|      0     ") #grave
         print("|     /X\    ")
 
-while True:
+while :
     drawGameField()
