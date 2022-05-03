@@ -66,5 +66,6 @@ def drawGameField():
         print("|            ")
         print("|      0     ") #grave
         print("|     /X\    ")
-        
 
+while True:
+    drawGameField()
