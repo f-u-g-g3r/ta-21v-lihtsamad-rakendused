@@ -1,4 +1,7 @@
-field = [
+
+
+
+field1 = [
     ["0", "3", "0", "3", "0", "3", "0", "3", "8"],
     ["3", "0", "3", "0", "3", "0", "3", "0", "7"],
     ["0", "3", "0", "3", "0", "3", "0", "3", "6"],
@@ -12,3 +15,6 @@ field = [
 
 # 0 - cant go / 1 - can go / 2 - white player / 3 - black player
 
+for i in range(0, 9999999999):
+    if i % 2 == 0:
+        next_position = int(input("Position for player 1: "))
