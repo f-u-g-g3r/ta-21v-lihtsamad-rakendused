@@ -177,6 +177,24 @@ def checkCanGoNext_for_white():
                 field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
                 showField()
 
+        elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B ":
+            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+            print(new_check_index_1, new_check_index_2)
+
+            if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                showField()
+
+            elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                showField()
+
+
+            
+
 def checkCanGoNext_for_black():
     if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " B ":
         old_check_index_1 = [checkFirstIndex(checker_num_position)]
@@ -200,6 +218,23 @@ def checkCanGoNext_for_black():
                 field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
                 field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
                 showField()
+
+        elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " W ":
+            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+            print(new_check_index_1, new_check_index_2)
+
+            if old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                
+                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                showField()
+
+            elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                showField()
+
 
 while True:
     for i in range(0, 999999999):
