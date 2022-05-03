@@ -57,6 +57,13 @@ def drawGameField():
         print("|       |    ")
         print("|       O    ")
         print("|      /|\   ")
-        print("|      / \    ")
+        print("|      / \   ")
         print("|            ")
+     elif(lives == ):
+        print("Г------------")
+        print("|            ")
+        print("|            ")
+        print("|            ")
+        print("|      0     ") #grave
+        print("|     /X\    ")
 
