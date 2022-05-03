@@ -2,9 +2,13 @@ import random
 
 words = ["cat"] #"mathematic", "games", "computer", "elephant", "estonia"
 
-wordToGuess = random.choice(words)
+word_to_guess = random.choice(words)
 
-letters = ["_"] * len(wordToGuess)
+word_length = 0
+for i in word_to_guess:
+    word_length += 1
+
+letters = ["_"] * word_length
 lives = 8
 
 def drawGameField():
@@ -65,24 +69,16 @@ def drawGameField():
         print("|      0     ") #grave
         print("|     /X\    ")
 
-def find_index(attempt):
-    for i in range(0, len(wordToGuess)):
-        if wordToGuess[i] == attempt:
-            letter_index = i
-            return letter_index
 
 while("_" in letters):
+    print(letters)
     drawGameField()
-    attempt = input("Enter a letter: ")
-    if attempt in wordToGuess and len(attempt) == 1:
-        letters[find_index(attempt)] = attempt
-        print(letters)
-    else:
-        lives -= 1
-        print("Wrong")
-        print(letters)
-    if lives == 0:
-        print("You lost, game over")
+    try_index = input("Enter an index for a letter: ")
+    if try_index > word_length:
+        print("Out of range")
+    try_letter = input("Enter a letter: ")
+    if try_letter in word_to_guess[try_index]:
+        print("1")
 
-    
+
 
