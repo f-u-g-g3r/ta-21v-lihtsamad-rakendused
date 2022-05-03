@@ -4,8 +4,6 @@ words = ["cat"] #"mathematic", "games", "computer", "elephant", "estonia"
 
 wordToGuess = random.choice(words)
 
-numLetters = len(words)
-print(numLetters)
 letters = ["_"] * len(wordToGuess)
 lives = 8
 
@@ -75,8 +73,10 @@ def find_index(attempt):
 
 while("_" in letters):
     drawGameField()
-    attempt = input("Enter a letter")
+    attempt = input("Enter a letter: ")
     if attempt in wordToGuess:
-        letters[find_index(letter_index)] = attempt
-        print(letters)
+        if len(attempt) == 1:
+            letters[find_index(attempt)] = attempt
+            print(letters)
+    
 
