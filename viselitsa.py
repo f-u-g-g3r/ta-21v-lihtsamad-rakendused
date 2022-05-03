@@ -7,8 +7,8 @@ wordToGuess = random.choice(words)
 numLetters = len(words)
 print(numLetters)
 letters = []
-letters.append("_" * numLetters)
-
+letters.append(" _ " * numLetters)
+print(letters)
 lives = 8
 
 def drawGameField():
