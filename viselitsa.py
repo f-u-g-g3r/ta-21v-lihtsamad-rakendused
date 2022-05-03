@@ -7,63 +7,64 @@ wordToGuess = random.choice(words)
 letters = ["_"] * len(wordToGuess)
 print(letters)
 
-lives = 6
+lives = 8
 
 def drawGameField():
-    if(lives == 4):
+    if(lives == 7):
         print("Г------------")
         print("|            ")
         print("|            ")
         print("|            ")
         print("|            ")
         print("|            ")
-    elif(lives == 3):
-        print("Г------------")
-        print("|       |    ")
-        print("|       O    ")
-        print("|            ")
-        print("|            ")
-        print("|            ")
-    elif(lives == ):
+    elif(lives == 6):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
+        print("|            ")
+        print("|            ")
+        print("|            ")
+    elif(lives == 5):
+        print("Г------------")
+        print("|       |    ")
+        print("|       O    ")
         print("|       |    ")
         print("|            ")
         print("|            ")
-    elif(lives == ):
+    elif(lives == 4):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
         print("|       |\   ")
         print("|            ")
         print("|            ")
-    elif(lives == ):
+    elif(lives == 3):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
         print("|      /|\   ")
         print("|            ")
         print("|            ")
-    elif(lives == ):
+    elif(lives == 2):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
         print("|      /|\   ")
         print("|      /     ")
         print("|            ")
-     elif(lives == ):
+     elif(lives == 1):
         print("Г------------")
         print("|       |    ")
         print("|       O    ")
         print("|      /|\   ")
         print("|      / \   ")
         print("|            ")
-     elif(lives == ):
+     elif(lives == 0):
         print("Г------------")
         print("|            ")
-        print("|            ")
+        print("|  YOU DIED  ")
         print("|            ")
         print("|      0     ") #grave
         print("|     /X\    ")
+        
 
