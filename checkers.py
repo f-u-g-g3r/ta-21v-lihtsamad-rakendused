@@ -110,6 +110,7 @@ while True:
                     newCheckerIndex[1] -= 1
                     if newCheckerIndex == checkerIndex:
                         print("URA")
+                    
                 #if next_num_position[checkFirstIndex(nex)]
             else:
                 print("You typed wrong!")
