@@ -241,29 +241,35 @@ def checkCanGoNext_for_black():
                 showField()
 
 
+i = 0
+showField()
 while True:
-    for i in range(0, 999999999):
-        if i % 2 == 0:
+    
+    if i % 2 == 0:
 
-            if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
-                print("Black wins")
-                break
-            elif " B " not in field1[0] and " B " not in field1[1] and " B " not in field1[2] and " B " not in field1[3] and " B " not in field1[4] and " B " not in field1[5] and " B " not in field1[6] and " B " not in field1[7]:
-                print("White wins")
-                break
+        if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
+            print("Black wins")
+            break
+        elif " B " not in field1[0] and " B " not in field1[1] and " B " not in field1[2] and " B " not in field1[3] and " B " not in field1[4] and " B " not in field1[5] and " B " not in field1[6] and " B " not in field1[7]:
+            print("White wins")
+            break
 
-            checker_num_position = input("(White player) Choose checker num position: ")
-            checker_char_position = input("(White player) Choose checker char position: ")
-            checkCanGoNext_for_white()
-                
+        checker_num_position = input("(White player) Choose checker num position: ")
+        checker_char_position = input("(White player) Choose checker char position: ")
+        checkCanGoNext_for_white()
+        i+=1
             
-        else:
+        
+    else:
 
-            if " W " not in field1[0]
-                print("Black wins")
-            elif " B " not in field1[0] and not field1[1] and not field1[2] and not field1[3] and not field1[4] and not field1[5] and not field1[6] and not field1[7]:
-                print("White wins")
-                
-            checker_num_position = input("(Black player) Choose checker num position: ")
-            checker_char_position = input("(Black player) Choose checker char position: ")
-            checkCanGoNext_for_black()
+        if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
+            print("Black wins")
+            break
+        elif " B " not in field1[0] and " B " not in field1[1] and " B " not in field1[2] and " B " not in field1[3] and " B " not in field1[4] and " B " not in field1[5] and " B " not in field1[6] and " B " not in field1[7]:
+            print("White wins")
+            break
+            
+        checker_num_position = input("(Black player) Choose checker num position: ")
+        checker_char_position = input("(Black player) Choose checker char position: ")
+        checkCanGoNext_for_black()
+        i+=1
