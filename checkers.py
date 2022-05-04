@@ -154,7 +154,6 @@ def checkNewSecondIndex(next_checker_char):
             break
 
 def checkCanGoNext_for_white():
-    while True:
         if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " W ":
             old_check_index_1 = [checkFirstIndex(checker_num_position)]
             old_check_index_2 = [checkSecondIndex(checker_char_position)]
@@ -172,32 +171,31 @@ def checkCanGoNext_for_white():
                     field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
                     field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
                     showField()
-                    break
+                    
 
                 elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
                     field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
                     field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
                     showField()
-                    break
+                    
                         
             elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B ":
-                while True:
-                    new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
-                    new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
-                    print(new_check_index_1, new_check_index_2)
+                new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+                new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+                print(new_check_index_1, new_check_index_2)
 
-                    if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
-                        field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                        field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                        showField()
-                        break
+                if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    
 
-                    elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
-                        field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                        field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                        showField()
-                        break
-
+                elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+        
+                        
 
             
 
@@ -242,14 +240,16 @@ def checkCanGoNext_for_black():
                 showField()
 
 
-while True:
-    for i in range(0, 999999999):
-        if i % 2 == 0:
-            checker_num_position = input("(White player) Choose checker num position: ")
-            checker_char_position = input("(White player) Choose checker char position: ")
+for i in range(0, 999999999):
+    if i % 2 == 0:
+        checker_num_position = input("(White player) Choose checker num position: ")
+        checker_char_position = input("(White player) Choose checker char position: ")
+        try:
             checkCanGoNext_for_white()
-            
-        else:
-            checker_num_position = input("(Black player) Choose checker num position: ")
-            checker_char_position = input("(Black player) Choose checker char position: ")
-            checkCanGoNext_for_black()
+        except:
+            continue
+        
+    else:
+        checker_num_position = input("(Black player) Choose checker num position: ")
+        checker_char_position = input("(Black player) Choose checker char position: ")
+        checkCanGoNext_for_black()
