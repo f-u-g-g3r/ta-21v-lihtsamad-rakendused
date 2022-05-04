@@ -1,10 +1,4 @@
 
-
-
-from distutils.command.build_scripts import first_line_re
-from tabnanny import check
-
-
 field1 = [
     [" - ", " B ", " - ", " B ", " - ", " B ", " - ", " B ", " 8 "], #0
     [" B ", " - ", " B ", " - ", " B ", " - ", " B ", " - ", " 7 "], #1
