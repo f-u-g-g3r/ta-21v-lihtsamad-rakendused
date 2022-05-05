@@ -22,10 +22,6 @@ def showField():
     print(field1[7][0] + field1[7][1] + field1[7][2] + field1[7][3] + field1[7][4] + field1[7][5] + field1[7][6] + field1[7][7] + field1[7][8])
     print(field1[8][0] + field1[8][1] + field1[8][2] + field1[8][3] + field1[8][4] + field1[8][5] + field1[8][6] + field1[8][7])
 
-#def chooseIndex(checker_num_position, checker_char_position):
-
-one_more = False
-#def nextPositionWhite():
     
 def checkFirstIndex(checker_num_position):
     while True:
