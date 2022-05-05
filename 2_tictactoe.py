@@ -26,7 +26,7 @@ while i < 9:
         next_position = int(input("Position for player 2: "))
         if game[next_position - 1] != "x":
             if game[next_position - 1] != "o":
-                game[next_position - 1] = "o"   4t4
+                game[next_position - 1] = "o"  
                 showGame()
             else:
                 print("Error")     
