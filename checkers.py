@@ -144,6 +144,7 @@ def checkNewSecondIndex(next_checker_char):
             break
 
 def checkCanGoNext_for_white():
+    
     while True:
         if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
             print("Black wins")
@@ -163,6 +164,9 @@ def checkCanGoNext_for_white():
             next_checker_num = input("(White player) Choose next checker num position: ")
             next_checker_char = input("(White player) Choose next checker char position: ")
 
+            checkCanEatRight = field1[checkNewFirstIndex(next_checker_num) - 1][checkNewSecondIndex(next_checker_char) + 1] == " + "
+            checkCanEatLeft = field1[checkNewFirstIndex(next_checker_num) - 1][checkNewSecondIndex(next_checker_char) - 1] == " + "
+            
             if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
                 new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
                 new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
@@ -182,7 +186,7 @@ def checkCanGoNext_for_white():
                     break
                     
                         
-            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B ":
+            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B " and checkCanEatRight or checkCanEatLeft :
                 new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
                 new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
                 print(new_check_index_1, new_check_index_2)
@@ -219,7 +223,7 @@ def checkCanGoNext_for_black():
             
         checker_num_position = input("(Black player) Choose checker num position: ")
         checker_char_position = input("(Black player) Choose checker char position: ")
-        
+
         if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " B ":
             old_check_index_1 = [checkFirstIndex(checker_num_position)]
             old_check_index_2 = [checkSecondIndex(checker_char_position)]
@@ -227,6 +231,9 @@ def checkCanGoNext_for_black():
 
             next_checker_num = input("(Black player) Choose next checker num position: ")
             next_checker_char = input("(Black player) Choose next checker char position: ")
+
+            checkCanEatRight = field1[checkNewFirstIndex(next_checker_num) + 1][checkNewSecondIndex(next_checker_char) + 1] == " + "
+            checkCanEatLeft = field1[checkNewFirstIndex(next_checker_num) + 1][checkNewSecondIndex(next_checker_char) - 1] == " + "
 
             if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
                 new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
@@ -245,7 +252,7 @@ def checkCanGoNext_for_black():
                     showField()
                     break
 
-            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " W ":
+            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " W " and checkCanEatRight or checkCanEatLeft:
                 new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
                 new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
                 print(new_check_index_1, new_check_index_2)
