@@ -267,8 +267,8 @@ def checkCanGoNext_for_black():
 
                 elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
 
-                    field1[new_check_index_1[0] - 1][new_check_index_2[0] - 1] = " B "
-                    field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                    field1[new_check_index_1[0] + 1][new_check_index_2[0] - 1] = " B "
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " + "
                     field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
                     showField()
                     continue
