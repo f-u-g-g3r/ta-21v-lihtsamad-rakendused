@@ -144,99 +144,7 @@ def checkNewSecondIndex(next_checker_char):
             break
 
 def checkCanGoNext_for_white():
-    if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " W ":
-        old_check_index_1 = [checkFirstIndex(checker_num_position)]
-        old_check_index_2 = [checkSecondIndex(checker_char_position)]
-        print(old_check_index_1, old_check_index_2)
-
-        next_checker_num = input("(White player) Choose next checker num position: ")
-        next_checker_char = input("(White player) Choose next checker char position: ")
-
-        if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
-            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
-            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
-            print(new_check_index_1, new_check_index_2)
-
-            if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-                
-
-            elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-                
-                    
-        elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B ":
-            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
-            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
-            print(new_check_index_1, new_check_index_2)
-
-            if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-                
-                
-
-            elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-        
-                        
-
-            
-
-def checkCanGoNext_for_black():
-    if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " B ":
-        old_check_index_1 = [checkFirstIndex(checker_num_position)]
-        old_check_index_2 = [checkSecondIndex(checker_char_position)]
-        print(old_check_index_1, old_check_index_2)
-
-        next_checker_num = input("(Black player) Choose next checker num position: ")
-        next_checker_char = input("(Black player) Choose next checker char position: ")
-
-        if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
-            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
-            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
-            print(new_check_index_1, new_check_index_2)
-
-            if old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-
-            elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-
-        elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " W ":
-            new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
-            new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
-            print(new_check_index_1, new_check_index_2)
-
-            if old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
-                
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-
-            elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
-                field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
-                field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
-                showField()
-
-
-i = 0
-showField()
-while True:
-    
-    if i % 2 == 0:
-
+    while True:
         if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
             print("Black wins")
             break
@@ -246,12 +154,62 @@ while True:
 
         checker_num_position = input("(White player) Choose checker num position: ")
         checker_char_position = input("(White player) Choose checker char position: ")
-        checkCanGoNext_for_white()
-        i+=1
-            
-        
-    else:
 
+        if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " W ":
+            old_check_index_1 = [checkFirstIndex(checker_num_position)]
+            old_check_index_2 = [checkSecondIndex(checker_char_position)]
+            print(old_check_index_1, old_check_index_2)
+
+            next_checker_num = input("(White player) Choose next checker num position: ")
+            next_checker_char = input("(White player) Choose next checker char position: ")
+
+            if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
+                new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+                new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+                print(new_check_index_1, new_check_index_2)
+
+                if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    break
+                    
+
+                elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " W "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    break
+                    
+                        
+            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " B ":
+                new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+                new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+                print(new_check_index_1, new_check_index_2)
+
+                if old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                    
+                    field1[new_check_index_1[0] - 1][new_check_index_2[0] + 1] = " W "
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " + "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    continue
+                    
+                    
+
+                elif old_check_index_1[0] - 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0] - 1][new_check_index_2[0] - 1] = " W "
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " + "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    continue
+                        
+
+            
+
+def checkCanGoNext_for_black():
+    while True:
+        
         if " W " not in field1[0] and " W " not in field1[1] and " W " not in field1[2] and " W " not in field1[3] and " W " not in field1[4] and " W " not in field1[5] and " W " not in field1[6] and " W " not in field1[7]:
             print("Black wins")
             break
@@ -261,5 +219,63 @@ while True:
             
         checker_num_position = input("(Black player) Choose checker num position: ")
         checker_char_position = input("(Black player) Choose checker char position: ")
+        
+        if field1[checkFirstIndex(checker_num_position)][checkSecondIndex(checker_char_position)] == " B ":
+            old_check_index_1 = [checkFirstIndex(checker_num_position)]
+            old_check_index_2 = [checkSecondIndex(checker_char_position)]
+            print(old_check_index_1, old_check_index_2)
+
+            next_checker_num = input("(Black player) Choose next checker num position: ")
+            next_checker_char = input("(Black player) Choose next checker char position: ")
+
+            if field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " + ":
+                new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+                new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+                print(new_check_index_1, new_check_index_2)
+
+                if old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    break
+
+                elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    break
+
+            elif field1[checkNewFirstIndex(next_checker_num)][checkNewSecondIndex(next_checker_char)] == " W ":
+                new_check_index_1 = [checkNewFirstIndex(next_checker_num)]
+                new_check_index_2 = [checkNewSecondIndex(next_checker_char)]
+                print(new_check_index_1, new_check_index_2)
+
+                if old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] + 1 == new_check_index_2[0]:
+
+                    field1[new_check_index_1[0] + 1][new_check_index_2[0] + 1] = " B "
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " + "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    continue
+
+                elif old_check_index_1[0] + 1 == new_check_index_1[0] and old_check_index_2[0] - 1 == new_check_index_2[0]:
+
+                    field1[new_check_index_1[0] - 1][new_check_index_2[0] - 1] = " B "
+                    field1[new_check_index_1[0]][new_check_index_2[0]] = " B "
+                    field1[old_check_index_1[0]][old_check_index_2[0]] = " + "
+                    showField()
+                    continue
+
+
+i = 0
+showField()
+while True:
+    
+    if i % 2 == 0:
+        checkCanGoNext_for_white()
+        i+=1
+            
+        
+    else:
         checkCanGoNext_for_black()
         i+=1
