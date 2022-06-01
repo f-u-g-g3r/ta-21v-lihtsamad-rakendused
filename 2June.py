@@ -1,4 +1,4 @@
-from matplotlib.pyplot import show, text
+
 import psutil
 import shutil
 path = 'C:'
