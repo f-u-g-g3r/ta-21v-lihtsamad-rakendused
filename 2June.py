@@ -20,7 +20,7 @@ with open("memoryCheck.txt", "a") as textFile:
         textFile.write("Your disk space is used over 20%! It is: " + str(diskSpacePercents) + "%" +  "\n")
     #if diskSpace
 
-# print("Free RAM:   ", showMemory[4])ф
+# print("Free RAM:   ", showMemory[4])
 # print("Totatl RAM: ", showMemory[0])
 
 # print("Free memory on disk:  ", diskSpace[2])
