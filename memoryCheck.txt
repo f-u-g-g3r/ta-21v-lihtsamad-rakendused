@@ -1,0 +1,16 @@
+Free RAM:   9731829760
+Total RAM: 16984231936
+
+Free memory on disk: 77935693824
+Total memory on disk: 256042332160
+
+Your RAM is used over 20%! It is: 42.7%
+Your disk space is used over 20%! It is: 69.6%
+Free RAM:   6483271680
+Total RAM: 16984231936
+
+Free memory on disk: 77330718720
+Total memory on disk: 256042332160
+
+Your RAM is used over 20%! It is: 61.8%
+Your disk space is used over 20%! It is: 69.8%
