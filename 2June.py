@@ -1,7 +1,6 @@
 
 import psutil
 import shutil
-import json
 import pip._vendor.requests
 path = 'C:'
 
@@ -27,10 +26,13 @@ with open("memoryCheck.txt", "a") as textFile:
     textFile.write("Total RAM: " + str(showMemory[0]) + "\n"*2) # 0 = total
     textFile.write("Free memory on disk: " + str(diskSpace[2]) + "\n") # 2 = free
     textFile.write("Total memory on disk: " + str(diskSpace[0]) + "\n"*2) # 0 = total
-    textFile.write("Temperature in Tallinn = " + str(round(current_temperature - 273.15, 1)))
+    
     if showMemory[2] > 20:
         textFile.write("Your RAM is used over 20%! It is: " + str(showMemory[2]) + "%" + "\n") # 2 = percents
     if diskSpacePercents > 20:
-        textFile.write("Your disk space is used over 20%! It is: " + str(diskSpacePercents) + "%" +  "\n")
+        textFile.write("Your disk space is used over 20%! It is: " + str(diskSpacePercents) + "%" +  "\n" )
+
+    textFile.write("\n" + "Temperature in Tallinn = " + str(round(current_temperature - 273.15, 1)) + "\n")
+    textFile.write("\n" + "\n" + "\n" + "\n")
 
 
