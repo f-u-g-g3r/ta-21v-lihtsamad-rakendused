@@ -1,16 +1,27 @@
-Free RAM:   9731829760
-Total RAM: 16984231936
+Free RAM:   2076909568
+Total RAM: 8350588928
 
-Free memory on disk: 77935693824
-Total memory on disk: 256042332160
+Free memory on disk: 399975292928
+Total memory on disk: 510913409024
 
-Your RAM is used over 20%! It is: 42.7%
-Your disk space is used over 20%! It is: 69.6%
-Free RAM:   6483271680
-Total RAM: 16984231936
+Your RAM is used over 20%! It is: 75.1%
+Your disk space is used over 20%! It is: 21.7%
+Temperature in Tallinn = 17.9
 
-Free memory on disk: 77330718720
-Total memory on disk: 256042332160
 
-Your RAM is used over 20%! It is: 61.8%
-Your disk space is used over 20%! It is: 69.8%
+
+
+Free RAM:   2086998016
+Total RAM: 8350588928
+
+Free memory on disk: 399974785024
+Total memory on disk: 510913409024
+
+Your RAM is used over 20%! It is: 75.0%
+Your disk space is used over 20%! It is: 21.7%
+
+Temperature in Tallinn = 18.3
+
+
+
+
