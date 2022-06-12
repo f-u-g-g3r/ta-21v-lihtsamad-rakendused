@@ -25,3 +25,17 @@ Temperature in Tallinn = 18.3
 
 
 
+Free RAM:   9414463488
+Total RAM: 16984231936
+
+Free memory on disk: 77021089792
+Total memory on disk: 256042332160
+
+Your RAM is used over 20%! It is: 44.6%
+Your disk space is used over 20%! It is: 69.9%
+
+Temperature in Tallinn = 17.8
+
+
+
+
