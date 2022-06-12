@@ -5,9 +5,8 @@ import pip._vendor.requests
 path = 'C:'
 
 showMemory = psutil.virtual_memory()
-diskSpace = shutil.disk_usage(path)
-
-diskSpacePercents = round(diskSpace[1] / diskSpace[0] * 100, 1) # 1 = used, 0 = total
+diskSpace = psutil.disk_usage(path)
+diskSpacePercents = diskSpace[3]
 
 # Weather API
 api_key = "48e84370663b15b4520231f167f6262b"
